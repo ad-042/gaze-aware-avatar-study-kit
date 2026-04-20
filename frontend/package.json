@@ -13,7 +13,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.58.2",
-    "@types/three": "^0.183.1",
+    "@types/three": "^0.184.0",
     "eslint": "^10.0.3",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.56.1",
@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "@pixiv/three-vrm": "^3.5.0",
-    "three": "^0.183.2"
+    "three": "^0.184.0"
   }
 }
