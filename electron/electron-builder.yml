@@ -1,0 +1,35 @@
+appId: com.gaze-aware-avatar-study-kit.app
+productName: gaze-aware-avatar-study-kit
+
+directories:
+  output: ../release
+
+# Only the compiled Electron main process goes into the asar.
+files:
+  - dist/**
+  - package.json
+
+# Extra resources are placed into resources/ alongside the asar.
+# These are accessible at runtime via process.resourcesPath.
+extraResources:
+  # PyInstaller backend bundle (backend.exe + _internal/)
+  - from: resources/backend
+    to: backend
+    filter:
+      - "**/*"
+  # Built frontend (vite build output)
+  - from: ../frontend/dist
+    to: frontend/dist
+    filter:
+      - "**/*"
+  # Study configuration files
+  - from: ../study
+    to: study
+    filter:
+      - "**/*"
+
+win:
+  target: dir
+  signAndEditExecutable: false
+
+asar: true

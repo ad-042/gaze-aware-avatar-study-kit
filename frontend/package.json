@@ -1,0 +1,27 @@
+{
+  "name": "gaze-aware-avatar-study-kit-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.2",
+    "@types/three": "^0.183.1",
+    "eslint": "^10.0.3",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^6.2.0",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "^3.5.0",
+    "three": "^0.183.2"
+  }
+}

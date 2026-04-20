@@ -1,0 +1,54 @@
+# === Secrets and local config ===
+.env
+.env.*
+!.env.example
+
+# === Claude Code local settings ===
+.claude/settings.local.json
+CLAUDE.local.md
+CLAUDE.md
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# === Node / Frontend ===
+node_modules/
+dist/
+
+# === Playwright / test artifacts ===
+frontend/tests/visual/screenshots/
+frontend/test-results/
+backend/test-results/
+
+# === Avatar assets (local/private — not tracked by default) ===
+*.vrm
+*.fbx
+# Allow the two official demo avatars (VRoid Hub samples, see docs/THIRD_PARTY_ASSETS.md)
+!frontend/public/avatars/AvatarSample_B.vrm
+!frontend/public/avatars/AvatarSample_C.vrm
+
+# === Release build artifacts ===
+release/
+electron/resources/backend/
+backend/build/
+
+# === Tools (local binaries, not redistributable) ===
+tools/TobiiStream/
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Logs ===
+*.log
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo

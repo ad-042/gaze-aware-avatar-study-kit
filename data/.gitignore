@@ -1,0 +1,6 @@
+# Runtime data — logs, sessions, exports
+# Nothing in this folder should be committed except sample data.
+*
+!.gitignore
+!sample/
+!sample/**

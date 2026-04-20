@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: Gaze-Aware Avatar Study Kit
+message: "If you use this software in academic work, please cite it."
+type: software
+authors:
+  - alias: ad-042
+url: "https://github.com/ad-042/gaze-aware-avatar-study-kit"
+license: MIT

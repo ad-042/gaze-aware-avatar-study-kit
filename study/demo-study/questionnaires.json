@@ -1,0 +1,87 @@
+{
+  "questionnaires": {
+    "round": {
+      "title": "Questionnaire",
+      "instruction": "Please rate the following statements.",
+      "items": [
+        {
+          "id": "q1",
+          "text": "The avatar appeared interested in me.",
+          "type": "likert",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+          "required": true
+        },
+        {
+          "id": "q2",
+          "text": "The avatar appeared to be aware of my presence.",
+          "type": "likert",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+          "required": true
+        },
+        {
+          "id": "q3",
+          "text": "The avatar's gaze behavior appeared natural.",
+          "type": "likert",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+          "required": true
+        },
+        {
+          "id": "q4",
+          "text": "I was satisfied with the interaction overall.",
+          "type": "likert",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+          "required": true
+        },
+        {
+          "id": "q5",
+          "text": "The conversation between me and the avatar worked properly.",
+          "type": "likert",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+          "required": true
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Comparison",
+      "instruction": "You have now completed both rounds.\nPlease compare the two versions of the avatar.",
+      "items": [
+        {
+          "id": "naturality",
+          "text": "Which version felt more natural?",
+          "type": "choice",
+          "options": ["Round 1", "Round 2", "Both identical"],
+          "required": true
+        },
+        {
+          "id": "future_choice",
+          "text": "Which version would you prefer to use in the future?",
+          "type": "choice",
+          "options": ["Round 1", "Round 2", "Both identical"],
+          "required": true
+        }
+      ]
+    },
+    "feedback": {
+      "title": "Additional Feedback",
+      "instruction": "If you would like, you can share any additional comments about the interaction.",
+      "items": [
+        {
+          "id": "feedback_text",
+          "text": "Your feedback (optional)",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  }
+}
