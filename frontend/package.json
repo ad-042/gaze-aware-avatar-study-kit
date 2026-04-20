@@ -21,7 +21,7 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@pixiv/three-vrm": "^3.5.0",
+    "@pixiv/three-vrm": "^3.5.2",
     "three": "^0.183.2"
   }
 }
