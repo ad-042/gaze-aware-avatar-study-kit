@@ -14,7 +14,7 @@ dependencies = [
 
 [project.optional-dependencies]
 tobii = [
-    "pyzmq>=26,<27",
+    "pyzmq>=26,<28",
 ]
 dev = [
     "ruff",
