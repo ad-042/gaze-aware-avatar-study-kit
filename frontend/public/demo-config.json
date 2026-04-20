@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "id": "demo-study",
+    "version": "1.0.0",
+    "name": "Gaze-Aware Avatar Study",
+    "description": "Within-subjects study comparing baseline and gaze-aware avatar conditions during a quiz conversation.",
+    "study_mode": "within_subjects",
+    "conditions": [
+      "baseline",
+      "gazeaware"
+    ],
+    "questions_per_condition": 5,
+    "assignment": {
+      "condition_order_mode": "counterbalanced",
+      "question_order_mode": "shuffle"
+    }
+  },
+  "flow": {
+    "steps": [
+      {
+        "id": "welcome",
+        "type": "info",
+        "title": "Welcome",
+        "content_blocks": [
+          "Thank you for taking part in this virtual interaction study.",
+          "In this study, you will interact with a virtual quizmaster and answer general-knowledge questions.",
+          "We are not evaluating your knowledge. Instead, we are interested in how people experience and respond to different avatar behaviors during the interaction."
+        ]
+      },
+      {
+        "id": "consent",
+        "type": "consent",
+        "title": "Information and Consent",
+        "content": "Please read the following before you continue. Participation is voluntary. You may stop at any time without any disadvantage.",
+        "consent_label": "I agree to participate in this study."
+      },
+      {
+        "id": "demographic",
+        "type": "form",
+        "title": "Demographic Information",
+        "fields": [
+          {
+            "id": "age",
+            "type": "number",
+            "label": "Age",
+            "required": true,
+            "min": 18,
+            "max": 99
+          },
+          {
+            "id": "gender",
+            "type": "select",
+            "label": "Gender",
+            "options": [
+              "Male",
+              "Female",
+              "Diverse",
+              "Prefer not to say"
+            ],
+            "required": true
+          },
+          {
+            "id": "corrective_lenses",
+            "type": "select",
+            "label": "Do you currently use corrective lenses?",
+            "options": [
+              "Yes",
+              "No",
+              "Prefer not to say"
+            ],
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "calibration",
+        "type": "calibration",
+        "title": "Gaze Verification"
+      },
+      {
+        "id": "character_selection",
+        "type": "avatar_selection",
+        "title": "Avatar Selection",
+        "content": "Please choose the avatar you would like to interact with during the study."
+      },
+      {
+        "id": "round1_instructions",
+        "type": "info",
+        "title": "Round 1",
+        "content_blocks": [
+          "You are about to begin the first quiz round.",
+          "Please speak clearly and at a natural pace.",
+          "Try not to interrupt the avatar while it is speaking.",
+          "If you do not know an answer, simply say \"I don't know.\" If you did not hear the question clearly, you may ask for it to be repeated.",
+          "If the avatar misunderstands you, do not worry — just continue with the quiz.",
+          "When you are ready, click the button below to begin."
+        ],
+        "button_label": "Start Quiz"
+      },
+      {
+        "id": "condition1",
+        "type": "conversation",
+        "condition": "baseline"
+      },
+      {
+        "id": "questionnaire1",
+        "type": "questionnaire",
+        "title": "Questionnaire — Round 1",
+        "questionnaire_id": "round"
+      },
+      {
+        "id": "round2_instructions",
+        "type": "info",
+        "title": "Round 2",
+        "content_blocks": [
+          "You are about to begin the second quiz round.",
+          "The interaction works the same way as before.",
+          "Please continue to speak clearly and at a natural pace.",
+          "If the avatar misunderstands you or you miss a question, just continue and answer as well as you can.",
+          "When you are ready, click the button below to begin."
+        ],
+        "button_label": "Start Quiz"
+      },
+      {
+        "id": "condition2",
+        "type": "conversation",
+        "condition": "gazeaware"
+      },
+      {
+        "id": "questionnaire2",
+        "type": "questionnaire",
+        "title": "Questionnaire — Round 2",
+        "questionnaire_id": "round"
+      },
+      {
+        "id": "comparison",
+        "type": "questionnaire",
+        "questionnaire_id": "comparison"
+      },
+      {
+        "id": "feedback",
+        "type": "questionnaire",
+        "questionnaire_id": "feedback"
+      },
+      {
+        "id": "ending",
+        "type": "info",
+        "title": "Thank You!",
+        "content_blocks": [
+          "Thank you for participating in this study.",
+          "You may now close this window."
+        ]
+      }
+    ]
+  },
+  "avatars": {
+    "avatars": [
+      {
+        "id": "avatar_b",
+        "label": "Female Avatar",
+        "model_file": "AvatarSample_B.vrm",
+        "voice": "alloy",
+        "thumbnail": "avatars/avatar_b_thumb.png"
+      },
+      {
+        "id": "avatar_c",
+        "label": "Male Avatar",
+        "model_file": "AvatarSample_C.vrm",
+        "voice": "echo",
+        "thumbnail": "avatars/avatar_c_thumb.png"
+      }
+    ]
+  },
+  "questionnaires": {
+    "questionnaires": {
+      "round": {
+        "title": "Questionnaire",
+        "instruction": "Please rate the following statements.",
+        "items": [
+          {
+            "id": "q1",
+            "text": "The avatar appeared interested in me.",
+            "type": "likert",
+            "scale_min": 1,
+            "scale_max": 5,
+            "scale_labels": [
+              "Strongly Disagree",
+              "Disagree",
+              "Neutral",
+              "Agree",
+              "Strongly Agree"
+            ],
+            "required": true
+          },
+          {
+            "id": "q2",
+            "text": "The avatar appeared to be aware of my presence.",
+            "type": "likert",
+            "scale_min": 1,
+            "scale_max": 5,
+            "scale_labels": [
+              "Strongly Disagree",
+              "Disagree",
+              "Neutral",
+              "Agree",
+              "Strongly Agree"
+            ],
+            "required": true
+          },
+          {
+            "id": "q3",
+            "text": "The avatar's gaze behavior appeared natural.",
+            "type": "likert",
+            "scale_min": 1,
+            "scale_max": 5,
+            "scale_labels": [
+              "Strongly Disagree",
+              "Disagree",
+              "Neutral",
+              "Agree",
+              "Strongly Agree"
+            ],
+            "required": true
+          },
+          {
+            "id": "q4",
+            "text": "I was satisfied with the interaction overall.",
+            "type": "likert",
+            "scale_min": 1,
+            "scale_max": 5,
+            "scale_labels": [
+              "Strongly Disagree",
+              "Disagree",
+              "Neutral",
+              "Agree",
+              "Strongly Agree"
+            ],
+            "required": true
+          },
+          {
+            "id": "q5",
+            "text": "The conversation between me and the avatar worked properly.",
+            "type": "likert",
+            "scale_min": 1,
+            "scale_max": 5,
+            "scale_labels": [
+              "Strongly Disagree",
+              "Disagree",
+              "Neutral",
+              "Agree",
+              "Strongly Agree"
+            ],
+            "required": true
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Comparison",
+        "instruction": "You have now completed both rounds.\nPlease compare the two versions of the avatar.",
+        "items": [
+          {
+            "id": "naturality",
+            "text": "Which version felt more natural?",
+            "type": "choice",
+            "options": [
+              "Round 1",
+              "Round 2",
+              "Both identical"
+            ],
+            "required": true
+          },
+          {
+            "id": "future_choice",
+            "text": "Which version would you prefer to use in the future?",
+            "type": "choice",
+            "options": [
+              "Round 1",
+              "Round 2",
+              "Both identical"
+            ],
+            "required": true
+          }
+        ]
+      },
+      "feedback": {
+        "title": "Additional Feedback",
+        "instruction": "If you would like, you can share any additional comments about the interaction.",
+        "items": [
+          {
+            "id": "feedback_text",
+            "text": "Your feedback (optional)",
+            "type": "text",
+            "required": false
+          }
+        ]
+      }
+    }
+  },
+  "prompts": {
+    "quiz": {
+      "system_base": "(demo mode — Realtime disabled)",
+      "system_end": "(demo mode — Realtime disabled)",
+      "questions": [
+        { "id": "q01", "text": "What is the capital of France?" },
+        { "id": "q02", "text": "Who was the first person to walk on the Moon?" },
+        { "id": "q03", "text": "Who wrote 'Romeo and Juliet'?" },
+        { "id": "q04", "text": "Who developed the theory of relativity?" },
+        { "id": "q05", "text": "In which country is the Great Sphinx located?" },
+        { "id": "q06", "text": "Which ocean is the largest on Earth?" },
+        { "id": "q07", "text": "Which planet is the largest in the solar system?" },
+        { "id": "q08", "text": "Who painted the 'Mona Lisa'?" },
+        { "id": "q09", "text": "What ship sank in 1912 after hitting an iceberg?" },
+        { "id": "q10", "text": "Which is the largest land animal?" }
+      ]
+    }
+  },
+  "gaze_profiles": {
+    "profiles": {
+      "default": {
+        "states": ["baseline", "gazeaware_pending", "gazeaware", "gaze_break"],
+        "pending_time_ms": 300,
+        "mutual_time_ms": 3600,
+        "break_time_ms": 1250,
+        "lose_debounce_ms": 200
+      }
+    }
+  }
+}
